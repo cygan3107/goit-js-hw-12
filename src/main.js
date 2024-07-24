@@ -18,13 +18,16 @@ const lightBox = new SimpleLightbox('.gallery a');
 
 formRef.addEventListener('submit', submitForm);
 loadMoreBtn.addEventListener('click', loadMoreImages);
+
 function submitForm(event) {
   event.preventDefault();
   imageContainerRef.innerHTML = '';
+  //loadMoreBtn.classList.add('hidden');
   search.searchQuery = formRef.elements.searchQuery.value;
   formRef.reset();
   addImageAndUpdateUI();
 }
+
 async function addImageAndUpdateUI() {
   try {
     const image = await search.fetchImage();

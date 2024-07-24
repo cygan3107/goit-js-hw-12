@@ -94,10 +94,12 @@ body {
 }
 
 .load-more {
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
-  width: 91px;
+  width: 120px;
   height: 40px;
   background: #4e75ff;
   font-family: 'Montserrat', sans-serif;
@@ -107,10 +109,11 @@ body {
   letter-spacing: 0.04em;
   color: #fff;
 }
-.load-more.hidden {
+/*.load-more.hidden {
   display: none;
 }
-/*.loader {
+
+.loader {
   color: black;
   display: inline-block;
   position: relative;

@@ -5,7 +5,6 @@ a {
 
 body {
   box-sizing: border-box;
-  
 }
 
 .search-form {
@@ -32,7 +31,9 @@ body {
   padding-top: 70px;
 }
 
-.photo-card {border: 1px solid #808080;}
+.photo-card {
+  border: 1px solid #808080;
+}
 
 .photo-card img {
   height: calc(100% - 70px);
@@ -41,7 +42,7 @@ body {
 }
 
 .info {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33333;
@@ -55,7 +56,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33333;
@@ -64,12 +65,12 @@ body {
 }
 
 .input {
-  font-family: "Montserrat", sans-serif;
-font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.04em;
-color: #808080;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
   border: 1px solid #808080;
   border-radius: 4px;
   width: 272px;
@@ -90,10 +91,9 @@ color: #808080;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #fff;
-  }
-  
-  
-.loader {
+}
+
+/*.loader {
   color: black;
   display: inline-block;
   position: relative;
@@ -127,3 +127,4 @@ color: #808080;
     box-shadow: 10px 0 black, 20px 0 black;
   }
 }
+*/

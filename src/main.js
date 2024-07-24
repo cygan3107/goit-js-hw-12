@@ -7,7 +7,8 @@ import iziToast from 'izitoast';
 // Opcjonalny import stylów
 import 'izitoast/dist/css/iziToast.min.css';
 import ApiService from './api-service';
-import scrollMonitor from 'scrollmonitor';
+
+const loadMoreBtn = document.querySelector('.load-more');
 
 const formRef = document.getElementById('search-form');
 const imageContainerRef = document.querySelector('.gallery');
@@ -15,10 +16,8 @@ const imageContainerRef = document.querySelector('.gallery');
 const search = new ApiService();
 const lightBox = new SimpleLightbox('.gallery a');
 
-const scrollListener = scrollMonitor.create(imageContainerRef);
-scrollListener.partiallyExitViewport(loadMore);
-
 formRef.addEventListener('submit', submitForm);
+loadMoreBtn.addEventListener('click', loadMoreImages);
 function submitForm(event) {
   event.preventDefault();
   imageContainerRef.innerHTML = '';
@@ -26,14 +25,6 @@ function submitForm(event) {
   formRef.reset();
   addImageAndUpdateUI();
 }
-
-function loadMore() {
-  if (search.isMorePage()) {
-    addImageAndUpdateUI();
-    return;
-  }
-}
-
 async function addImageAndUpdateUI() {
   try {
     const image = await search.fetchImage();
@@ -97,4 +88,8 @@ function renderImage(array) {
   imageContainerRef.insertAdjacentHTML('beforeend', markup);
   lightBox.refresh();
   search.addPage();
+}
+function loadMoreImages() {
+  this.page += 1;
+  addImageAndUpdateUI();
 }

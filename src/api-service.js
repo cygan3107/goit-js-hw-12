@@ -13,18 +13,18 @@ export default class ApiService {
     this.#page = 1;
     this.#totalHits = 0;
   }
-  
-  addPage() {
-    this.#page += 1;
-  }
+
+    addPage() {
+      this.#page += 1;
+   }
 
   resetPage() {
     this.#page = 1;
   }
 
-  isMorePage() {
-    return PER_PAGE * (this.#page - 1) < this.#totalHits;
-  }
+  //isMorePage() {
+  //  return PER_PAGE * (this.#page - 1) < this.#totalHits;
+  //}
 
   get totalHits() {
     return this.#totalHits;

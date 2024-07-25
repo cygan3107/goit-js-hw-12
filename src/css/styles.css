@@ -109,10 +109,10 @@ body {
   letter-spacing: 0.04em;
   color: #fff;
 }
-/*.load-more.hidden {
+.load-more.hidden {
   display: none;
 }
-
+/*
 .loader {
   color: black;
   display: inline-block;

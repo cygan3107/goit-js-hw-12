@@ -37,12 +37,22 @@ async function addImageAndUpdateUI() {
       });
     }
     renderImage(image.hits);
+
+    if (image.hits.length < 40) {
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results.",
+      });
+      loadMoreBtn.classList.add('hidden');
+    } else {
+      loadMoreBtn.classList.remove('hidden');
+    }
   } catch {
     iziToast.error({
       message: 'Oops! Something went wrong! Try to reload the page!',
     });
   }
 }
+
 
 function renderImage(array) {
   if (!array.length) {
